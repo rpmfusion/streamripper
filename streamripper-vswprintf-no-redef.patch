@@ -1,0 +1,28 @@
+diff -pruN streamripper-1.62.1-ori/lib/debug.c streamripper-1.62.1/lib/debug.c
+--- streamripper-1.62.1-ori/lib/debug.c	2007-02-26 00:23:08.000000000 +0100
++++ streamripper-1.62.1/lib/debug.c	2007-08-08 18:09:52.000000000 +0200
+@@ -29,8 +29,10 @@
+     #define vswprintf _vsnwprintf
+ #else
+     /* This prototype is missing in some systems */
++#if ! HAVE_VSWPRINTF
+     int vswprintf (wchar_t * ws, size_t n, const wchar_t * format, va_list arg);
+ #endif
++#endif
+ 
+ /*****************************************************************************
+  * Public functions
+diff -pruN streamripper-1.62.1-ori/lib/mchar.c streamripper-1.62.1/lib/mchar.c
+--- streamripper-1.62.1-ori/lib/mchar.c	2007-05-26 20:33:35.000000000 +0200
++++ streamripper-1.62.1/lib/mchar.c	2007-08-08 18:09:34.000000000 +0200
+@@ -60,8 +60,10 @@
+ #else
+     #define ICONV_WCHAR "WCHAR_T"
+     /* This prototype is missing in some systems */
++#if ! HAVE_VSWPRINTF
+     int vswprintf (wchar_t * ws, size_t n, const wchar_t * format, va_list arg);
+ #endif
++#endif
+ 
+ 
+ /*****************************************************************************
