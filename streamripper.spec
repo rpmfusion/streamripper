@@ -1,7 +1,7 @@
 Summary:	Shoutcast and icecast compatible streams recorder
 Name:		streamripper
-Version:	1.62.3
-Release:	8%{?dist}
+Version:	1.63.5
+Release:	2%{?dist}
 Group:		Applications/Multimedia
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
@@ -59,30 +59,32 @@ mv -f %{man_tmp} %{man_ori}
 rm -rf %{buildroot}
 
 %changelog
-* Sun Aug 03 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 1.62.3-8
-- rebuild
+* Fri Aug 08 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 1.63.5-2
+- rebuild for RPM Fusion
+
+* Fri Aug 08 2008 Patrice Bouchand <patrice[DOT]bouchand[DOT]fedora[AT]gmail[DOT]com> 1.63.5-1
+- New streamripper release
 
 * Sat Nov 24 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 1.62.3-7
 - rebuilt
 
-
-* Mon Sep 03 2007 Patrice Bouchand <patrice.bouchand.fedora@gmail.com> 1.62.3-6
+* Mon Sep 03 2007 Patrice Bouchand <patrice[DOT]bouchand[DOT]fedora[AT]gmail[DOT]com> 1.62.3-6
 - New streamripper release
 
-* Sat Sep 01 2007 Patrice Bouchand <patrice.bouchand.fedora@gmail.com> 1.62.2-5
+* Sat Sep 01 2007 Patrice Bouchand <patrice[DOT]bouchand[DOT]fedora[AT]gmail[DOT]com> 1.62.2-5
 - Force Makefile to search lib in _libdir
 - Add INSTALL="install -p -c" for make install
 
-* Mon Aug 13 2007 Patrice Bouchand <patrice.bouchand.fedora@gmail.com> 1.62.2-4
+* Mon Aug 13 2007 Patrice Bouchand <patrice[DOT]bouchand[DOT]fedora[AT]gmail[DOT]com> 1.62.2-4
 - New release of streamripper
 - Spec clean-up
 
-* Thu Aug 9 2007 Patrice Bouchand <patrice.bouchand.fedora@gmail.com> 1.62.1-3
+* Thu Aug 9 2007 Patrice Bouchand <patrice[DOT]bouchand[DOT]fedora[AT]gmail[DOT]com> 1.62.1-3
 - Force to use external tre lib.
 
-* Wed Aug 8 2007 Patrice Bouchand <patrice.bouchand.fedora@gmail.com> 1.62.1-2
+* Wed Aug 8 2007 Patrice Bouchand <patrice[DOT]bouchand[DOT]fedora[AT]gmail[DOT]com> 1.62.1-2
 - Convert man page to UTF8
 - Add streamripper-vswprintf-no-redef.patch
 
-* Wed Aug 8 2007 Patrice Bouchand <patrice.bouchand.fedora@gmail.com> 1.62.1-1
+* Wed Aug 8 2007 Patrice Bouchand <patrice[DOT]bouchand[DOT]fedora[AT]gmail[DOT]com> 1.62.1-1
 - Initial Fedora release
