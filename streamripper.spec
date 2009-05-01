@@ -1,7 +1,7 @@
 Summary:	Shoutcast and icecast compatible streams recorder
 Name:		streamripper
-Version:	1.63.5
-Release:	3%{?dist}
+Version:	1.64.6
+Release:	1%{?dist}
 Group:		Applications/Multimedia
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
@@ -12,8 +12,8 @@ BuildRequires:  libvorbis-devel
 BuildRequires:  libmad-devel
 BuildRequires:  tre-devel
 BuildRequires:  faad2-devel
+BuildRequires:  glib2-devel >= 2.6
 
-Patch0: streamripper-vswprintf-no-redef.patch
 
 %description
 
@@ -26,28 +26,20 @@ for listening to the station while you are recording.
 
 %prep
 %setup -q
-%patch0 -p1
 chmod 0644 ./lib/charset.h
 
 %build
 ## To be sure we will not use the embedded libmad
 rm -rf ./libmad-*
-## To be sure we will not use the embedded tre
-rm -rf ./tre-*
 
 %configure --disable-static
-make %{?_smp_mflags} CFLAGS="%{optflags} -L%{_libdir}"
+make %{?_smp_mflags}
 
 
 %install
 rm -rf %{buildroot}
 make install DESTDIR=%{buildroot} INSTALL="install -p -c"
 
-## man page must be converted to utf8
-%define man_ori %{buildroot}/%{_mandir}/man1/streamripper.1
-%define man_tmp %{man_ori}.utf8
-iconv -f ISO-8859-1 -t utf8 %{man_ori} -o %{man_tmp}
-mv -f %{man_tmp} %{man_ori}
 
 %files
 %defattr(-,root,root,-)
@@ -59,6 +51,9 @@ mv -f %{man_tmp} %{man_ori}
 rm -rf %{buildroot}
 
 %changelog
+* Thu Apr 30 2009 Nicolas Chauvet <kwizart@gmail.com> - 1.64.6-1
+- Update release.
+
 * Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.63.5-3
 - rebuild for new F11 features
 
