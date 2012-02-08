@@ -1,26 +1,18 @@
 Summary:	Shoutcast and icecast compatible streams recorder
 Name:		streamripper
 Version:	1.64.6
-Release:	2%{?dist}
+Release:	3%{?dist}
 Group:		Applications/Multimedia
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:	libogg-devel
-<<<<<<< streamripper.spec
 BuildRequires:	libvorbis-devel
 BuildRequires:	libmad-devel
 BuildRequires:	tre-devel
 BuildRequires:	faad2-devel
 BuildRequires:	glib2-devel >= 2.16
-=======
-BuildRequires:  libvorbis-devel
-BuildRequires:  libmad-devel
-BuildRequires:  tre-devel
-BuildRequires:  faad2-devel
-BuildRequires:  glib2-devel >= 2.6
->>>>>>> 1.4
 
 
 %description
@@ -34,10 +26,6 @@ for listening to the station while you are recording.
 
 %prep
 %setup -q
-<<<<<<< streamripper.spec
-
-=======
->>>>>>> 1.4
 chmod 0644 ./lib/charset.h
 
 %build
@@ -52,10 +40,6 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 make install DESTDIR=%{buildroot} INSTALL="install -p -c"
 
-<<<<<<< streamripper.spec
-
-=======
->>>>>>> 1.4
 
 %files
 %defattr(-,root,root,-)
@@ -67,18 +51,9 @@ make install DESTDIR=%{buildroot} INSTALL="install -p -c"
 rm -rf %{buildroot}
 
 %changelog
-* Wed Jan 25 2012 Nicolas Chauvet <kwizart@gmail.com>
+* Wed Feb 08 2012 Nicolas Chauvet <kwizart@gmail.com> - 1.64.6-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
-<<<<<<< streamripper.spec
-* Thu Apr 30 2009 kwizart < kwizart at gmail.com > - 1.64.6-1
-- Update to 1.64.6
-
-=======
-* Thu Apr 30 2009 Nicolas Chauvet <kwizart@gmail.com> - 1.64.6-1
-- Update release.
-
->>>>>>> 1.4
 * Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.63.5-3
 - rebuild for new F11 features
 
