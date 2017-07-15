@@ -1,12 +1,11 @@
 Summary:	Shoutcast and icecast compatible streams recorder
 Name:		streamripper
 Version:	1.64.6
-Release:	6%{?dist}
-Group:		Applications/Multimedia
+Release:	7%{?dist}
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
 BuildRequires:	libogg-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	libmad-devel
@@ -33,24 +32,24 @@ chmod 0644 ./lib/charset.h
 rm -rf ./libmad-*
 
 %configure --disable-static
-make %{?_smp_mflags}
+%make_build
 
 
 %install
 rm -rf %{buildroot}
-make install DESTDIR=%{buildroot} INSTALL="install -p -c"
+%make_install
 
 
 %files
-%defattr(-,root,root,-)
-%doc README THANKS *.txt CHANGES COPYING 
+%doc README THANKS *.txt CHANGES
+%license COPYING
 %{_bindir}/*
 %{_mandir}/man1/*
 
-%clean
-rm -rf %{buildroot}
-
 %changelog
+* Sat Jul 15 2017 Leigh Scott <leigh123linux@googlemail.com> - 1.64.6-7
+- Update spec file
+
 * Mon Mar 20 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1.64.6-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
