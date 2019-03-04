@@ -6,6 +6,7 @@ URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 
+BuildRequires:	gcc
 BuildRequires:	libogg-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	libmad-devel
