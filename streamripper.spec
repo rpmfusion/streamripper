@@ -1,7 +1,10 @@
+# https://bugzilla.rpmfusion.org/show_bug.cgi?id=5849
+%global _lto_cflags %{nil}
+
 Summary:	Shoutcast and icecast compatible streams recorder
 Name:		streamripper
 Version:	1.64.6
-Release:	15%{?dist}
+Release:	16%{?dist}
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -48,6 +51,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/*
 
 %changelog
+* Fri Nov 20 2020 Leigh Scott <leigh123linux@gmail.com> - 1.64.6-16
+- Disable LTO (rfbz #5849)
+
 * Tue Aug 18 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1.64.6-15
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
