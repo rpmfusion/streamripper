@@ -4,7 +4,7 @@
 Summary:	Shoutcast and icecast compatible streams recorder
 Name:		streamripper
 Version:	1.64.6
-Release:	16%{?dist}
+Release:	17%{?dist}
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -51,6 +51,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/*
 
 %changelog
+* Thu Feb 04 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1.64.6-17
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Fri Nov 20 2020 Leigh Scott <leigh123linux@gmail.com> - 1.64.6-16
 - Disable LTO (rfbz #5849)
 
