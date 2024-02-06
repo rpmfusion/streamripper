@@ -7,7 +7,8 @@ Version:	1.64.6
 Release:	22%{?dist}
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
-Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz 
+Patch0:     buildfix.patch
 
 BuildRequires:	gcc
 BuildRequires:	libogg-devel
@@ -28,7 +29,7 @@ as individual files. In addition, streamripper includes a relay server
 for listening to the station while you are recording.
 
 %prep
-%setup -q
+%autosetup -p1
 chmod 0644 ./lib/charset.h
 
 %build
