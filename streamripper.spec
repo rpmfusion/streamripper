@@ -4,7 +4,7 @@
 Summary:	Shoutcast and icecast compatible streams recorder
 Name:		streamripper
 Version:	1.64.6
-Release:	22%{?dist}
+Release:	23%{?dist}
 URL:		http://streamripper.sourceforge.net/
 License:	GPLv2
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz 
@@ -52,6 +52,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/*
 
 %changelog
+* Fri Aug 02 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.64.6-23
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
+
 * Sun Feb 04 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.64.6-22
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
